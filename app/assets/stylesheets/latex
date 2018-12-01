@@ -1,0 +1,73 @@
+\documentclass[a4paper,11pt]{bxjsarticle}
+\usepackage{xltxtra}
+\usepackage{zxjatype}
+\setjamainfont[BoldFont=ipaexm.ttf]{ipaexm.ttf}
+\setjasansfont[BoldFont=ipaexg.ttf]{ipaexg.ttf}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage[dvipdfmx]{graphicx}
+
+\title{数理工学実験
+第２回レポート}
+\author{高山　善成\\学籍番号　1029296002\\email: takayama.yoshinari.72s@st.kyoto-u.ac.jp}
+
+
+\begin{document}
+\maketitle
+
+
+
+\section{実験の目的}
+組合せ最適化（離散最適化）とは，解が離散的
+に定義されていたり，順序や割当のように組合せ
+的な構造によって表現できる最適化問題のことで
+ある．現実の多くの場面において自然に現れる問
+題であるが，問題の構造をうまく捉えなければ効
+率よく解くことは難しい．本実験では部分和問題
+と最短路問題という問題を通して組合せ最適化問
+題の難しさを体感し，代表的な解法の一つである
+動的計画法について学ぶことを目的とする．
+
+
+
+\section{実験の原理}
+C言語を使ってそれぞれの方法を問題例を生み出すmake.instに当てはめて実行することで実行時間を比較する．
+
+
+\section{実験方法}
+\subsection{課題１}配布されたダウンロードURLからjikken.tar.gzをダウンロードしてその中のsumディレクトリに，新しくdp.cというC言語ファイルを作る．（エディタとしてはAtomを使った．以下同様）
+\subsection{課題２}enumerate.cとdp.c（総当たり法と動的計画法）の実行時間を比較する．make.instファイルから問題例を作成して，それらをそれぞれのcファイルをコンパイルした後に，問題例を受け取り実行する．nを色々な値で実験して，比較して，Excelでグラフを作り，それらを考察する．
+\subsection{課題３}dp.cを題意に合うように変更する.
+\subsection{課題４}enumerate.cを題意に合うように変更する．その後，元のenumerate.cと実行時間を比較して，exelでグラフを作り，それらを考察する．
+\section{結果}
+\subsection{課題１}
+以下，動的計画法のコード
+\lstinputlisting{dpfirst.c}
+\subsection{課題２}
+\begin{center}
+			\includegraphics[clip,width=7.0cm]{dpfirst_enumerate.png}
+            \caption{グラフ１}
+            \includegraphics[clip,width=7.0cm]{a_n.png}
+            \caption{表１}
+
+		\end{center}
+実験に使用した計算機ではa = 500
+のときn がどれぐらいの大きさの問題例まで計算
+できるかについては，考察にて考える.
+\subsection{課題３}
+以下，動的計画法のコード
+\lstinputlisting{dp.c}
+\subsection{課題４}
+以下，総当たり法のコード
+\lstinputlisting{enumerate4.c}
+\section{考察}
+\subsection{課題２}
+
+\subsection{課題４}
+\section{結論}
+\section{参考文献}
+
+\end{document}
