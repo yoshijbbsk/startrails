@@ -11,6 +11,8 @@ gem 'bcrypt'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 gem 'faker'
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'puma', '~> 3.11'
@@ -58,6 +60,7 @@ end
 
 group :production do
   gem 'pg', '0.20.0'
+  gem 'fog','1.42'
 end
 
 group :test do
