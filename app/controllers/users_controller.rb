@@ -62,12 +62,12 @@ end
 
    def user_params
      params.require(:user).permit(:name, :email, :password,
-                                  :password_confirmation)
+                                  :password_confirmation,:ip)
    end
    # beforeアクション
 
    # ログイン済みユーザーかどうか確認
-  
+
 
    # 正しいユーザーかどうか確認
     def correct_user
